@@ -1,0 +1,64 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\huge Creating an Azure Account}
+\end{center}
+\section{Purchasing Options}
+\begin{itemize}
+	\item \textbf{Azure.com} - Fastest and easiest
+	\item \textbf{Microsoft Representative} - Intended for large organizations
+	\item \textbf{Microsoft partner} - Partner provides access to Azure, manages billing and provides support.
+\end{itemize}
+\section{Azure Billing}
+\subsection{Azure subscription}
+\textbf{Azure subscription} - a logical container used to provision resources in Azure.\\
+You might want to create additional subscriptions to separate:
+\begin{itemize}
+	\item \textbf{Environments} - development and testing
+	\item \textbf{Organisational structures} - different departments
+	\item \textbf{Billing} - manage and track costs
+\end{itemize}
+You may also need additional subscriptions due to subscription limits as they have hard limits, such as the max number of Express Route circuits per subscription is 10.
+\begin{center}
+	\includegraphics[width=15cm]{4-billing-structure-overview}
+\end{center}
+\section{Support options}
+\subsection{Free resources}
+\begin{itemize}
+	\item Online documentation
+	\item Community support
+	\begin{itemize}
+		\item Azure knowledge center
+		\item Microsoft tech community
+		\item Stack overflow
+		\item Server fault
+		\item Azure feedback forums
+		\item Twitter
+	\end{itemize}
+	\item Demo videos
+	\item Billing and subscription management support
+	\item Azure quickstart center
+	\item Azure service health
+	\item Azure advisor
+\end{itemize}
+\subsection{Support plans}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{|L|L|L|L|}
+		\hline
+		& Developer & Standard & Professional Direct\\
+		\hline
+		Best for& Non-critical workloads&Production workloads & Business-critical workloads\\
+		\hline
+		Reactive technical support& 1 business day& 1 hour for critical& 1 hour and priority tracking for critical\\
+		\hline
+		Proactive technical support& N/A & N/A & Access to a pool of technical experts\\
+		\hline
+		
+	\end{tabularx}
+}
+
+\end{document}

@@ -1,11 +1,8 @@
 \documentclass{article}[18pt]
 \input{../format}
 \lhead{AZ900}
-\renewcommand{\familydefault}{\sfdefault}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{b}{L}
-\newcolumntype{s}{>{\hsize=.5\hsize}L}
-\usepackage{enumitem}
+
+
 \setlist{nolistsep}
 \begin{document}
 \begin{center}
@@ -221,7 +218,7 @@ Easier to respond to change
 
 \hypertarget{types-of-cloud-models}{%
 	\section{Types of cloud models}\label{types-of-cloud-models}}
-{\raggedleft
+{\renewcommand{\arraystretch}{2}
 	\begin{tabularx}{\textwidth}{|s|s|b|b|}
 \hline
 Name& Description & Advantages & Disadvantages\\
@@ -280,33 +277,27 @@ Hybrid cloud& Combining public and private clouds&
 
 \hypertarget{iaas}{%
 	\subsection{IaaS}\label{iaas}}
-
-Not responsible for:
-
+Most flexible category, gives control over hardware.\\
+Commonly used for:
 \begin{itemize}
-	\tightlist
-	\item
-	Datacenter
-	\item
-	Networking firealls
-	\item
-	Servers+Storage
+	\item Migrating workflows
+	\item Test and development
+	\item Storage, backup and recovery
 \end{itemize}
 
-Most flexible Configure and manage hardware
+\textbf{Shared responsibility model} - Cloud provider ensures infrastructure is working correctly, customer makes sure the service they are using is configured correctly, is up to date and is available to users.
+
 
 \hypertarget{paas}{%
 	\subsection{PaaS}\label{paas}}
-
-Not responsible for:
-
+Provides an environment for building, testing and deploying software applications. Don't have to manage infrastructure\\
+Commonly used for:
 \begin{itemize}
-	\tightlist
-	\item
-	IaaS + OS
+	\item Development framework
+	\item Analytics or business intelligence
 \end{itemize}
 
-Focus on application development
+
 
 \hypertarget{saas}{%
 	\subsection{SaaS}\label{saas}}
@@ -319,18 +310,25 @@ Pay as you go pricing
 
 Users pay for software they use on a subscription model
 
-\hypertarget{comparison}{%
-	\subsection{Comparison}\label{comparison}}
+\subsection{Cost and Ownership}
 
-\begin{itemize}
-	\tightlist
-	\item
-	Moving up the stack reduces costs as managing less
-\end{itemize}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{|s|s|b|b|}
+		\hline
+		& IaaS & PaaS & SaaS\\
+		\hline
+		Upfront costs& None, pay for consumption,& None, pay for consumption & None, pay subscription\\
+		\hline
+		User ownership& User responsible for software, OS, middleware and applications& User responsible fort development of applications& Users just use software\\
+		\hline
+		Cloud provider ownership& Infrastructure is available to user& OS, Network and service& Provision, management and maintenance of application software.\\
+		\hline
 
+	\end{tabularx}
+}
 
-
-
-
+\begin{center}
+	\includegraphics[width=15cm]{5-layer-diagram}
+\end{center}
 
 \end{document}
