@@ -1,0 +1,7 @@
+*.out
+*.aux
+*.log
+*.synctex.gz
+*_minted*
+.idea
+*node_modules*

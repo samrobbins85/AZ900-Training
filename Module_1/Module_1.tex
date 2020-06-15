@@ -1,0 +1,336 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+\renewcommand{\familydefault}{\sfdefault}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{b}{L}
+\newcolumntype{s}{>{\hsize=.5\hsize}L}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\begin{document}
+\begin{center}
+\underline{\huge Principles of cloud computing}
+\end{center}
+
+
+
+
+\section{What is cloud computing}
+
+Services typically offered
+
+\begin{itemize}
+	\tightlist
+	\item
+	Compute power
+	\item
+	Storage
+	\item
+	Networking
+	\item
+	Analytics
+\end{itemize}
+
+Containers - Provide a consistent, isolated execution environment for
+applications.
+
+\begin{itemize}
+	\tightlist
+	\item
+	Standard runtime environment used to execute the app
+	\item
+	Leading platform is docker
+\end{itemize}
+
+Serverless computing - Run application code without creating,
+configuring or maintaining a server
+
+\begin{itemize}
+	\tightlist
+	\item
+	Application is broken into separate functions that run when triggered
+	by some action
+	\item
+	Only pay for the processing time used by each function as it executes
+\end{itemize}
+
+\hypertarget{benefits-of-cloud-computing}{%
+	\section{Benefits of cloud
+		computing}\label{benefits-of-cloud-computing}}
+
+Cost effective
+
+\begin{itemize}
+	\tightlist
+	\item
+	No upfront infrastructure costs
+	\item
+	Not buying infrastructure that isn't fully utilised
+	\item
+	Can scale up and down with demand
+\end{itemize}
+
+Scalability
+
+\begin{itemize}
+	\item
+	Vertical scaling (scaling up)
+	\begin{itemize}
+
+		\item
+		Adding more resources to a server
+	\end{itemize}
+	\item
+	Horizontal scaling (scaling out)
+	\begin{itemize}
+
+		\item
+		Adding more servers
+	\end{itemize}
+\end{itemize}
+
+Elasticity
+
+\begin{itemize}
+	\tightlist
+	\item
+	Automatically adding more resources to handle traffic
+\end{itemize}
+
+Current
+
+\begin{itemize}
+	\tightlist
+	\item
+	Don't have to think about having current hardware and patches
+\end{itemize}
+
+Reliability (Microsoft responsibility)
+
+\begin{itemize}
+	\tightlist
+	\item
+	Provided backup, recovery replication etc
+	\item
+	Fault tolerance
+\end{itemize}
+
+Global
+
+\begin{itemize}
+	\tightlist
+	\item
+	Fully redundant datacenters
+	\item
+	High availability (shared responsibility)
+	\item Lower customer latency
+\end{itemize}
+
+Security (shared responsibility)
+
+\begin{itemize}
+	\tightlist
+	\item
+	Both physical and digital
+\end{itemize}
+Agility (speed to set up)
+
+
+\hypertarget{compliance-terms-and-requirements}{%
+	\section{Compliance terms and
+		requirements}\label{compliance-terms-and-requirements}}
+
+Questions include
+
+\begin{itemize}
+	\tightlist
+	\item
+	How compliant is the cloud provider when it comes to handling
+	sensitive data
+	\item
+	How compliant are the services offered by the cloud provider
+	\item
+	How can I deploy my own cloud-based solutions to scenarios that have
+	accreditation or compliance requirements?
+	\item
+	What terms are part of the privacy statement for the provider?
+\end{itemize}
+
+\hypertarget{economies-of-scale}{%
+	\section{Economies of scale}\label{economies-of-scale}}
+
+\begin{itemize}
+	\tightlist
+	\item
+	Less expensive
+	\item
+	More efficient
+	\item
+	Pass benefits on
+\end{itemize}
+
+\hypertarget{capex-vs-opex}{%
+	\section{CapEx vs OpEx}\label{capex-vs-opex}}
+
+\subsection{CapEx (Capital expenditure)}
+
+\begin{itemize}
+	\tightlist
+	\item
+	Spend on physical infrastructure
+	\item
+	Storage
+	\item
+	Network
+	\item
+	Backup and archive
+	\item
+	Organisation continuity and disaster recovery
+	\item
+	Datacentre infrastructure
+	\item
+	Technical personnel
+\end{itemize}
+\subsection{Benefits}
+Fixed costs make prediction easier
+
+\subsection{OpEx (operational expenditure)}
+
+\begin{itemize}
+	\tightlist
+	\item
+	Monthly bill
+	\item
+	Pay as you go
+	\item
+	Get set up immediately
+	\item
+	No upfront costs
+	\item
+	Leasing software and customised features
+	\item
+	Scaling charges based on usage/demand
+	\item
+	Billing at the user or organisation level
+\end{itemize}
+
+Azure follows a consumption based model, which just has operational
+expenditure
+\subsection{Benefits}
+Easier to respond to change
+
+\hypertarget{types-of-cloud-models}{%
+	\section{Types of cloud models}\label{types-of-cloud-models}}
+{\raggedleft
+	\begin{tabularx}{\textwidth}{|s|s|b|b|}
+\hline
+Name& Description & Advantages & Disadvantages\\
+\hline
+Private cloud & Cloud set up in own datacenter&
+ \begin{itemize}
+	\tightlist
+	\item Ensure the configuration is as needed
+	\item Control over security and compliance
+\end{itemize}&
+\begin{itemize}
+	\tightlist
+	\item Some initial capEx Costs
+	\item Limited agility
+	\item Require IT skills
+\end{itemize}\\
+\hline
+Public cloud& No local hardware, all running on cloud providers hardware&
+\begin{itemize}
+	\tightlist
+	\item High scalability/agility
+	\item Pay as you go pricing
+	\item Not responsible for maintenance or updates of the hardware
+	\item Minimal technical knowledge required
+\end{itemize}&
+\begin{itemize}
+	\tightlist
+	\item May be security requirements that can't be met
+	\item May be government policies, industry standards or legal requirements that can't be met
+	\item Can't manage hardware in way you want to
+	\item May not work with legacy applications
+\end{itemize}\\
+\hline
+Hybrid cloud& Combining public and private clouds&
+\begin{itemize}
+	\tightlist
+	\item Keep any legacy systems running
+	\item Flexibility to choose where things run
+	\item Get economies of scale from public cloud when available
+	\item Meet more compliance 
+	\item Run things where it is most appropriate
+\end{itemize}&
+\begin{itemize}
+	\tightlist
+	\item Increased cost
+	\item Increased complexity
+\end{itemize}\\
+\hline
+\end{tabularx}
+}
+
+
+
+\hypertarget{types-of-cloud-services}{%
+	\section{Types of cloud services}\label{types-of-cloud-services}}
+
+\hypertarget{iaas}{%
+	\subsection{IaaS}\label{iaas}}
+
+Not responsible for:
+
+\begin{itemize}
+	\tightlist
+	\item
+	Datacenter
+	\item
+	Networking firealls
+	\item
+	Servers+Storage
+\end{itemize}
+
+Most flexible Configure and manage hardware
+
+\hypertarget{paas}{%
+	\subsection{PaaS}\label{paas}}
+
+Not responsible for:
+
+\begin{itemize}
+	\tightlist
+	\item
+	IaaS + OS
+\end{itemize}
+
+Focus on application development
+
+\hypertarget{saas}{%
+	\subsection{SaaS}\label{saas}}
+
+Only responsible for data+access
+
+Access in Azure via marketplace
+
+Pay as you go pricing
+
+Users pay for software they use on a subscription model
+
+\hypertarget{comparison}{%
+	\subsection{Comparison}\label{comparison}}
+
+\begin{itemize}
+	\tightlist
+	\item
+	Moving up the stack reduces costs as managing less
+\end{itemize}
+
+
+
+
+
+
+\end{document}

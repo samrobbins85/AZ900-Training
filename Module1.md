@@ -1,27 +1,93 @@
 # Module 1 - Cloud Concepts
 
-- High availability - shared responsibility
-- Scalability - Add more resources
-  - Scaling up - Making a component bigger or faster
-  - Scaling out - Adding more components
-- Elasticity - Dynamic scalability, increase scale if something causes increased traffic
-- Agility - Speed to set up
-- Fault tolerance - Microsoft responsibility, how errors are handled
-- Disaster recovery - Backup, recovery environment with VM
-- Global reach - Data centres across the globe
-- Customer latency - High speed network
-- Predictive cost considerations - Provide good estimated of how much it will cost
-- Security - Shared responsibility,
-- Economies of scale
-  - Less expensive
-  - More efficient
-  - Pass benefits on
+## What is cloud computing
+
+Services typically offered
+
+- Compute power
+- Storage
+- Networking
+- Analytics
+
+Containers - Provide a consistent, isolated execution environment for applications.
+
+- Standard runtime environment used to execute the app
+- Leading platform is docker
+
+Serverless computing - Run application code without creating, configuring or maintaining a server
+
+- Application is broken into separate functions that run when triggered by some action
+- Only pay for the processing time used by each function as it executes
+
+## Benefits of cloud computing
+
+Cost effective
+
+- No upfront infrastructure costs
+- Not buying infrastructure that isn't fully utilised
+- Can scale up and down with demand
+
+Scalability
+
+- Vertical scaling (scaling up)
+  - Adding more resources to a server
+- Horizontal scaling (scaling out)
+
+  - Adding more servers
+
+Elasticity
+
+- Automatically adding more resources to handle traffic
+
+Current
+
+- Don't have to think about having current hardware and patches
+
+Reliability (Microsoft responsibility)
+
+- Provided backup, recovery replication etc
+- Fault tolerance
+
+Global
+
+- Fully redundant datacenters
+- High availability (shared responsibility)
+
+Security (shared responsibility)
+
+- Both physical and digital
+
+## Compliance terms and requirements
+
+Questions include
+
+- How compliant is the cloud provider when it comes to handling sensitive data
+- How compliant are the services offered by the cloud provider
+- How can I deploy my own cloud-based solutions to scenarios that have accreditation or compliance requirements?
+- What terms are part of the privacy statement for the provider?
+
+## Economies of scale
+
+- Less expensive
+- More efficient
+- Pass benefits on
+
+* Agility - Speed to set up
+* Customer latency - High speed network
+* Predictive cost considerations - Provide good estimated of how much it will cost
+* Economies of scale
 
 ## CapEx vs OpEx
 
 CapEx (Capital expenditure)
 
 - Spend on physical infrastructure
+- Storage
+- Network
+- Backup and archive
+- Organisation continuity and disaster recovery
+- Datacentre infrastructure
+- Technical personnel
 
 OpEx
 
@@ -29,6 +95,9 @@ OpEx
 - Pay as you go
 - Get set up immediately
 - No upfront costs
+- Leasing software and customised features
+- Scaling charges based on usage/demand
+- Billing at the user or organisation level
 
 Azure follows a consumption based model, which just has operational expenditure
 
@@ -65,7 +134,7 @@ Not responsible for:
 Most flexible
 Configure and manage hardware
 
-### PasS
+### PaaS
 
 Not responsible for:
 
