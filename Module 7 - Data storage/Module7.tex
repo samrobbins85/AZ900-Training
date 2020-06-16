@@ -1,0 +1,92 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\huge Azure Data Storage Options}
+\end{center}
+\section{Benefits of storing data in the cloud}
+\begin{itemize}
+	\item Automated backup and recovery
+	\item Replication across the globe
+	\item Support for data analytics
+	\item Encryption capabilities
+	\item Multiple data types
+	\item Data storage in virtual disks
+	\item Storage tiers
+\end{itemize}
+\subsection{Types of data}
+\begin{definition}[Structured data]
+	Data that adheres to a schema. Relational data
+\end{definition}
+\begin{definition}[Semi-strutured data]
+	Using tags and keys to provide hierarchy. Used in NoSQL databases
+\end{definition}
+\begin{definition}[Unstructured data]
+	Data with no designated structure
+\end{definition}
+\section{Azure Data storage}
+\subsection{Azure SQL database}
+Relational Database as a service. Based on Microsoft SQL Server database engine.\\
+\\
+Uses the Microsoft Data Migration Assistant to generate reports to guide through migration.
+\subsection{Azure Cosmos DB}
+Globally distributed database service supporting schema-less data (NoSQL). Used for highly responsive and always on applications
+\subsection{Azure Blob storage}
+Holds unstructured data
+\subsection{Azure data lake}
+Allows you to perform analytics on your data usage and prepare reports. Data lake is a large repository that stores both structured and unstructured data.
+\subsection{Azure Files}
+Offers fully managed file shares in the cloud over SMB (Server Message Block). 
+\subsection{Azure Queue}
+Used for storing large numbers of messages\\
+\\
+Can be used to:
+\begin{itemize}
+	\item Create a backlog of work and to pass messages between different Azure web servers
+	\item Distribute load among different web servers/infrastructure and to manage bursts of traffic
+	\item Build resilience against component failure when multiple users access your data at the same time
+\end{itemize}
+\subsection{Disk storage}
+Provides disks for virtual machines and other services to access as they need. Come in many different sizes and performance levels, from SSDs to HDDs.
+\subsection{Storage tiers}
+Azure offers 3 storage tiers for blob object storage
+\begin{enumerate}
+	\item Hot storage - Accessed frequently
+	\item Cool storage - Infrequent access
+	\item Archive storage - Rarely accessed
+\end{enumerate}
+\subsection{Encryption and replication}
+The following encryption types are available for your resources:
+\begin{itemize}
+	\item Azure Storage Service Encryption (SSE) - For data at rest. Encrypts before storing and decrypts during retrieval
+	\item Client side encryption - Data already encrypted by the client libraries. Decrypted during retrieval
+\end{itemize}
+\section{Comparison with on premises storage}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{s b b}
+		
+		\textbf{Needs} & \textbf{On Premises} & \textbf{Azure data storage}\\
+		\hline
+		Compliance and security& Dedicated servers required for privacy and security& Client side encryption and encryption at rest\\
+		\hline
+		Store structured and unstructured data & Additional IT resources with dedicated servers required& Azure data lake and portal analyses and manages all types of data\\
+		\hline
+		Replication and high availability& More resources, licensing and servers required& Built in replication and redundancy features available\\
+		\hline
+		Application sharing and access to shared resources& File sharing requires additional administration resources& File sharing options without additional license\\
+		\hline
+		Relational data storage& Needs a database server with database admin role& Offers DBaaS options\\
+		\hline
+		Distributed storage and data access& Expensive storage, networking and compute resources needed& Azure Cosmos DB provides distributed access\\
+		\hline
+		Messaging and load balancing& Hardware redundancy impacts budget and resources& Azure Queue provides effective load balancing\\
+		\hline
+		Tiered storage& Management of tiered storage needs technology and labour skill set& Azure offers automated tiered storage of data
+		
+		
+	\end{tabularx}
+}
+\end{document}

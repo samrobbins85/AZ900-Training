@@ -88,7 +88,7 @@ A complete orchestration service for containers with multiple architectures with
 \subsection{Microservice architecture}
 Breaking solutions into smaller, independent pieces. This allows the separate components of the app to be maintained, scaled or updated independently.
 \subsection{Migrating to containers}
-\includegraphics[width=15cm]{4-kub-migration}
+\includegraphics[width=15cm]{4-kub-migration}\\
 The process is as follows:
 \begin{enumerate}
 	\item Convert the application to containers and publish to Azure Container Registry
@@ -121,5 +121,38 @@ Serverless encompasses three ideas:
 	\item Micro billing - Only pay for the time code runs
 \end{itemize}
 \subsection{Azure functions}
-
+Azure functions are ideal for when you're only concerned about the code running your service. They commonly perform work in response to an event.\\
+\\
+Azure functions scale automatically based on demand.\\
+\\
+Azure functions can be either:
+\begin{itemize}
+	\item Stateless - Behave as if they've been restarted every time they respond to an event
+	\item Stateful - A context is passed through the function to track prior activity
+\end{itemize}
+\subsection{Azure Logic Apps}
+Logic apps execute workflows designed to automate business scenarios and built from predefined logic blocks.\\
+\\
+Every logic app workflow starts with a trigger. Azure Logic apps can be designed without code.
+\subsection{Comparison}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{s b b}
+		
+		& \textbf{Functions} & \textbf{Logic apps}\\
+		\hline
+		Development& Code First & Designer First\\
+		\hline
+		Connectivity& Few built in bindings, write code for all else& large collection of connectors, write code for others\\
+		\hline
+		Actions& Each activity is an Azure function; write code for activity functions & Large collection of ready made functions\\
+		\hline
+		Monitoring& Azure application insights& Azure portal, Log Analytics\\
+		\hline
+		Management& REST API, Visual Studio& Azure portal, REST API, PowerShell, Visual Studio\\
+		\hline
+		Execution context& Locally and in cloud& Only in cloud
+		
+		
+	\end{tabularx}
+}
 \end{document}
