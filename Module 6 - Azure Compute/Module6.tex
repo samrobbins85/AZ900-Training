@@ -1,0 +1,125 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\huge Azure Compute Options}
+\end{center}
+\section{Essential Azure compute concepts}
+\begin{definition}[Virtual Machines]
+	Software emulations of physical computers.
+\end{definition}
+\begin{definition}[Containers]
+	A virtualization environment for running applications. Don't include an operating system for the apps running inside the container. Bundle the libraries and components needed to run the application and use the existing host OS running the container.
+\end{definition}
+
+\begin{definition}[Azure App Service]
+	Platform as a service designed to host web oriented applications.
+\end{definition}
+
+\begin{definition}[Serverless Computing]
+	Cloud hosted execution environment that runs your code but abstracts the underlying hosting environments.
+\end{definition}
+\section{Azure Virtual Machines}
+VMs are an ideal choice when you need:
+\begin{itemize}
+	\item Total control over the OS
+	\item The ability to run custom software
+	\item To use custom hosting configurations
+\end{itemize}
+When to use virtual machines:
+\begin{itemize}
+	\item During testing and development
+	\item When running applications in the cloud
+	\item When extending your datacenter to the cloud
+	\item During disaster recovery
+\end{itemize}
+\subsection{Scaling VMs}
+\subsubsection{Availability set}
+\begin{definition}[Availability set]
+	A logical grouping of two or more VMs that help keep your application available during planned or unplanned maintenance.
+\end{definition}
+\begin{definition}[Planned maintenance event]
+	When the underlying Azure fabric that hosts VMs is updated by Microsoft
+\end{definition}
+When the VM is part of an availability set, updates are sequenced so that not all the associated VMs are rebooted at the same time. They are put into different update domains
+\begin{definition}[Update domains]
+	Groups of VMs and underlying physical hardware that can be rebooted at the same time
+\end{definition}
+\begin{definition}[Unplanned maintenance]
+	Hardware failure in the data centre, such as power outage or disk failure
+\end{definition}
+\begin{definition}[Fault domain]
+	The group of virtual machines that all share common hardware that has failed.
+\end{definition}
+With an availability set you get:
+\begin{itemize}
+	\item Up to three fault domains that have a server rack with dedicated power and network resources
+	\item Five logical update domains which then can be increased to 10
+\end{itemize}
+There is no cost for an availability set, just for the VMs in the set
+\subsubsection{Virtual Machine Scale Sets}
+Virtual machine scale sets let you create and manage a group of identical, load balanced VMs.\\
+\\
+This allows you to centrally manage, configure and update many VMs to provide highly available applications.
+\subsubsection{Azure Batch}
+Azure batch enables large scale job scheduling and compute management\\
+\\
+Batch:
+\begin{itemize}
+	\item Starts a pool of compute VMs for you
+	\item Installs applications and staging data
+	\item Runs jobs with as many tasks as you have
+	\item Identifies failures
+	\item Requeues work
+	\item Scales down the pool as work completes
+\end{itemize}
+
+\section{Containers}
+\subsection{Azure Container Instances}
+PaaS to upload containers and execute them directly with automatic elastic scale
+\subsection{Azure Kubernetes Service}
+A complete orchestration service for containers with multiple architectures with multiple containers
+\begin{definition}[Orchestration]
+	The task of automating, managing and interacting with many containers
+\end{definition}
+\subsection{Microservice architecture}
+Breaking solutions into smaller, independent pieces. This allows the separate components of the app to be maintained, scaled or updated independently.
+\subsection{Migrating to containers}
+\includegraphics[width=15cm]{4-kub-migration}
+The process is as follows:
+\begin{enumerate}
+	\item Convert the application to containers and publish to Azure Container Registry
+	\item Deploy the containers to an AKS cluster
+	\item Azure AD controls access to AKS resources
+	\item You access Azure services
+	\item Optionally, AKS is deployed with a virtual network
+\end{enumerate}
+\section{Azure App Service}
+\subsection{Costs}
+You pay for the compute resources your app uses. The app service plan determines how much hardware is devotes to the host. There's even a free tier for low traffic sites
+\subsection{Types of app services}
+\begin{itemize}
+	\item Web apps - Host web apps
+	\item API apps - Build REST-based Web APIs
+	\item Web Jobs - Run a program or script in the same context as a web app. They can be scheduled or run by a trigger
+	\item Mobile app back ends
+	\begin{itemize}
+		\item Store mobile app data in a cloud based SQL database
+		\item Authenticate customers
+		\item Send push notifications
+		\item Execute custom back end logic
+	\end{itemize}
+\end{itemize}
+\section{Serverless}
+Serverless encompasses three ideas:
+\begin{itemize}
+	\item Abstraction of servers - Don't need to manage them
+	\item Event-driven scale - Code runs when events come in
+	\item Micro billing - Only pay for the time code runs
+\end{itemize}
+\subsection{Azure functions}
+
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\huge Managing services with the Azure portal}
+\end{center}
+
+\section{Azure management options}
+
+Tools that are commonly used for management include:
+\begin{itemize}
+	\item Azure portal
+	\begin{itemize}
+		\item Access with any web browser
+		\item Doesn't provide a way to automate repetitive tasks
+	\end{itemize}
+	\item Azure Powershell
+	\begin{itemize}
+		\item Module for windows powershell or powershell core (crossplatform version of powershell)
+		\item Allows you to automate repetitive tasks
+	\end{itemize}
+	\item Azure CLI
+	\begin{itemize}
+		\item Cross platform
+		\item Commands start with \texttt{az}
+	\end{itemize}
+	\item Azure Cloud Shell
+	\begin{itemize}
+		\item Interactive, authenticated browser accessible shell
+		\item Can use either bash or powershell
+		\item Range of CLI tools already installed such as git
+	\end{itemize}
+	\item Azure Mobile App
+	\begin{itemize}
+		\item Both iOS and Android
+		\item Easy to check status
+		\item Access Azure Cloud Shell
+	\end{itemize}
+	\item Other Options
+	\begin{itemize}
+		\item Azure SDKs for range of language
+		\item REST APIs
+	\end{itemize}
+\end{itemize}
+\section{Navigating the portal}
+\begin{itemize}
+	\item Resource Panel - Left sidebar. Can customize with specific resources.
+	\item Azure Marketplace - Good for creating new resources in Azure. Provision applications and services from service providers
+	\item Directory and Subscription - Change between subscriptions
+	\item Help Pane
+	\begin{itemize}
+		\item Create new support requests
+		\item Documentation and other guided support
+	\end{itemize}
+	\item Azure Advisor
+	\begin{itemize}
+		\item Get proactive, actionable and personalized best practice recommendations
+		\item Improve performance, security and availability of resources
+	\end{itemize}
+	
+\end{itemize}
+\section{Azure Portal dashboards}
+\subsection{What is a dashboard?}
+\begin{definition}[Dashboard]
+	Customizable collection of UI tiles displayed in the Azure Portal
+\end{definition}
+Dashboards are stored as JSON files, making them easy to transfer.
+\subsection{Sharing a dashboard}
+You can share a dashboard in a resource group.
+\section{Preview features}
+Common areas you will see previews for:
+\begin{itemize}
+	\item New storage types
+	\item New Azure services
+	\item New or enhanced integration with other platforms
+	\item New APIs for services
+\end{itemize}
+\begin{definition}[General Availability]
+	When a feature is released as part of Azure's default product set after evaluation and testing
+\end{definition}
+\subsection{Preview Categories}
+\begin{definition}[Private Preview]
+	Available to specific Azure customers. Typically, invite only
+\end{definition}
+\begin{definition}[Public Preview]
+	Available to all Azure customers for evaluation
+\end{definition}
+
+
+
+\end{document}
