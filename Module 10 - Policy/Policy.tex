@@ -1,0 +1,171 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\LARGE Apply and monitor infrastructure standards with Azure Policy}
+\end{center}
+\section{IT Compliance}
+\begin{definition}[Azure Policy]
+	An Azure service to create, assign and manage policies
+\end{definition}
+RBAC focuses on user actions at different scopes whereas Azure Policy focuses on resouce properties during deployment. Azure Policy is a default allow and explicit deny system, in contrast with RBAC
+\subsection{Creating a policy}
+To apply a policy you will:
+\begin{itemize}
+	\item Create a policy definition
+	\item Assign a definition to a scope of resources
+	\item View policy evaluation results
+\end{itemize}
+\subsubsection{Policy definition}
+A policy definition expresses what to evaluate and what action to take\\
+\\
+The policy definition itself is represented as a JSON file
+\subsubsection{Applying Azure Policy}
+This can be done using the Azure portal or one of the command line tools, it takes the following parameters\\
+\\
+{\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{s b}
+	\textbf{Parameter}& \textbf{Description}\\
+	\hline
+	Name & The actual name of the assignment\\
+	\hline
+	DisplayName& Display name for the policy assignment\\
+	\hline
+	Definition & The policy definition, based on which you're using to create the assignment\\
+	\hline
+	Scope& A scope determines what resources or grouping of resources the policy assignment gets enforced on
+\end{tabularx}
+}
+\subsection{Identifying non-compliant resources}
+We can use the applied policy definition to identify resources that aren't compliant with the policy assignment through the Azure portal. Similarly, this can be done through the command line
+\subsection{Assigning a definition to a scope of resources}
+\begin{definition}[Policy assignment]
+	A policy definition that has been assigned to take place within a specific scope
+\end{definition}
+Policy assignments are inherited by all child resources. This inheritance means that if a policy is applied to a resource group, it is applied to that resource group.
+\subsection{Policy effects}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{s b}
+		\textbf{Policy effect}& \textbf{What happens}\\
+		\hline
+		Name & The actual name of the assignment\\
+		\hline
+		Deny& The resource creation/update fails due to policy\\
+		\hline
+		Disabled& The policy rule is ignored\\
+		\hline
+		Append& Adds additional parameters/field to the requested resource during creation or update\\
+		\hline
+		Audit, AuditifNotExists& Creates a warning event in the activity log, but doesn't stop the request\\
+		\hline
+		DeployIfNotExists& Executes a template deployment when a specific condition is met
+	\end{tabularx}
+}
+\section{Organise policy with initiatives}
+\begin{definition}[Initiative definition]
+	A set or group of policy definitions to help track your compliance state for a larger goal
+\end{definition}
+\begin{definition}[Initiative assignment]
+	An initiative definition assigned to a specific scope
+\end{definition}
+\section{Enterprise governance management}
+\begin{definition}[Azure Management Groups]
+	Containers for managing access, policies and compliance across multiple Azure subscriptions
+\end{definition}
+Management groups allow you to order your Azure resources hierarchically into collections, which provide a further level of classification that is above the level of subscriptions.
+\section{Azure Blueprints}
+Azure Blueprints is a declarative way to orchestrate the deployment of various resource templates and other artefacts such as:
+\begin{itemize}
+	\item Role assignments
+	\item Policy assignments
+	\item Azure resource manager templates
+	\item Resource groups
+\end{itemize}
+The process of implementing Azure Blueprints consists of the following high-level steps:
+\begin{enumerate}
+	\item Create an Azure Blueprint
+	\item Assign the blueprint
+	\item Track the blueprint assignments
+\end{enumerate}
+The Azure Blueprints service is backed by the Azure Cosmos database to provide low latency and high availability.
+\subsection{Comparison with Resource Manager Templates}
+Blueprints sit above Resource Manager Templates, also including resource groups, policies and role assignments.\\
+\\
+Blueprints can be managed directly in Azure, whereas Resource Manager Templates have to be managed separately.
+\subsection{Comparison with Azure Policy}
+Including a policy in a blueprint enables the creation of the right pattern or design during assignment of the blueprint. 
+\section{Compliance Manager}
+Microsoft provides resource transparency using the following tools
+\subsection{Microsoft Privacy Statement}
+This explains what personal data Microsoft processes, how it is processed and for what purpose
+\subsection{Microsoft trust center}
+This contains all the details about how Microsoft implements and supports security, privacy, compliance and transparency in all Microsoft cloud products.
+\subsection{Service Trust Portal}
+This hosts the compliance manager service and is the Microsoft public site for publishing audit reports.
+\subsection{Compliance Manager}
+This provides the following features:
+\begin{itemize}
+	\item Combines
+	\begin{enumerate}
+		\item Audit results
+		\item Information Microsoft compiles internally for its compliance with regulations
+		\item An organisation's self assessment of their own compliance with these standards and regulations
+	\end{enumerate}
+	\item Enables you to assign, track, and record compliance and assessment-related activities
+	\item Provides a compliance score to track progress
+	\item Provides a repository for managing evidence relating to compliance
+	\item Produces reports
+\end{itemize}
+\newpage
+\section{Monitoring service health}
+\subsection{Azure Monitor}
+This maximizes the availability and performance of applications using telemetry.
+\subsubsection{Data sources}
+{\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{L L}
+		\textbf{Data Tier}& \textbf{Description}\\
+		\hline
+		Application monitoring data& Data about the performance and functionality of written code\\
+		\hline
+		Guest OS monitoring data& Data about the OS your application is running\\
+		\hline
+		Azure resource monitoring data& Data about the operation of an Azure resource\\
+		\hline
+		Azure subscription monitoring data& Data about the operation and management of an azure subscription and azure itself\\
+		\hline
+		Azure tenant monitoring data& Data about the operation of tenant-level Azure services
+	\end{tabularx}
+}
+\subsubsection{Diagnostic Settings}
+\textbf{Activity logs} record when resources are created or modified\\
+\textbf{Metrics} tell you how the resource is performing and the resources it's consuming\\
+\\
+You can enable diagnostics
+\begin{itemize}
+	\item Enable guest-level monitoring
+	\item Performance counters - collect performance data
+	\item Event logs - Enable various event logs
+	\item Crash dumps - enable or disable
+	\item Sinks - send your diagnostic data to other services for more analysis
+	\item Agent - configure agent settings
+\end{itemize}
+\subsubsection{Getting more data from your apps}
+Application insights - Monitors the availability, performance and usage of your web applications\\
+\\
+Azure Monitor for containers - Monitors the performance of container workloads\\
+\\
+Azure Monitor for VMs - Monitors the performance and health of your Windows and Linux VMs
+\subsubsection{Responding to alert notifications}
+Alerts - Azure notifies you of critical conditions using alerts and can attempt to take corrective actions\\
+Autoscale - Ensures you have the right amount of resources running to manage the load on your application effectively
+\subsection{Azure Service Health}
+This provides guidance when issues with Azure notify you, it is composed of the following views:
+\begin{itemize}
+	\item Azure Status - Global view of the health state of Azure Services
+	\item Service health - Tracks the state of your services in the regions you use them
+	\item Resource health - Diagnose and support when an Azure service issue affects your resources
+\end{itemize}
+\end{document}

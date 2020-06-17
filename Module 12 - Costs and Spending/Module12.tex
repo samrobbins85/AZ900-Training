@@ -1,0 +1,53 @@
+\documentclass{article}[18pt]
+\input{../format}
+\lhead{AZ900}
+
+
+\begin{document}
+\begin{center}
+\underline{\huge Predict costs and optimize spending for Azure}
+\end{center}
+\section{Purchasing Azure products and services}
+
+At the end of each monthly billing cycbe, the usage values will be charges to your payment method and the meters are reset.\\
+\\
+You can deallocate a VM so that it is not assigned to a CPU or network in a datacenter, but the physical disks maintain so that it is easy to resume it.
+\section{Factors affecting cost}
+\subsection{Resource Type}
+Costs are resource specific, so different resources cost different amounts
+\subsection{Services}
+Azure usage rates differ between Enterprise, Web Direct and CSP customers
+\subsection{Location}
+Cost depends on what datacenter is running the service due to efficiency and cost of local resources
+\subsection{Azure Billing Zones}
+Data transfer pricing depends on what zones are being used
+\section{Saving on infrastructure costs}
+\subsection{Azure Credits}
+Visual Studio subscribers get a monthly credit benefit for testing
+\subsection{Use spending limits}
+You can set a limit so that you aren't charged once you have used up your credits. This is specific to subscriptions that include a monthly Azure credit allotment
+\subsection{Reserved instances}
+If you know you have static and predictable costs you can reserve for one or three year to save money
+\subsection{Low cost locations and regions}
+Some regions are cheaper, ensure all resources are in that region or you will have a cost of sending data between regions
+\subsection{Reduce the size of Virtual machines}
+Oversized virtual machines will cost money for performance that isn't being used
+\subsection{Deallocate virtual machines in off hours}
+You can use the auto shutdown feature to either reduce capacity by reducing the number of virtual machines behind a load balancer or stop a service
+\subsection{Migrate to PaaS or SaaS}
+The higher up you go, the cheaper the cost
+\section{Save on licensing cost}
+In Linux you don't have to pay a licence cost.
+\subsection{Azure Hybrid Benefit}
+If you already have a Windows Server Licence covered by software assurance you can get a large discount by using this licence in Azure.
+\subsubsection{Azure Hybrid Benefit for SQL Server}
+Similarly, SQL licences can be given for a saving.
+\subsection{Use Dev/Test subscription offers}
+By specifying you are in a non production environment, you don't need to pay a licence fee
+\subsection{Bring your own SQL server license}
+If you are on an Enterprise agreement and have an investment in SQL server licences, you can use this in Virtual machines for free. 
+\subsection{Use SQL server developer edition}
+SQL server developer edition is a free product for nonproduction use
+\subsection{Use constrained instance sizes of database workloads}
+SQL server costs are per core, so my reducing the number of cores, you can save on cost
+\end{document}
