@@ -1,0 +1,453 @@
+\documentclass[addpoints]{exam}
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{AZ900}{}{Sam Robbins}
+\runningheader{AZ900}{}{Sam Robbins}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\printanswers
+\usepackage{graphicx}
+\marksnotpoints
+\bracketedpoints
+\pointsdroppedatright
+\pointsinrightmargin
+\lstset{language=Python,
+	basicstyle=\ttfamily,
+	keywordstyle=\bfseries,
+	showstringspaces=false,
+	morekeywords={if, else, then, print, end, for, do, while,output},
+	tabsize=4,
+	mathescape=true,
+	moredelim=**[is][\color{red}]{@}{@},
+}
+\begin{document}
+\begin{center}
+	\underline{\huge Questions likely to be on the exam}
+\end{center}
+\begin{questions}
+\section{Describe Cloud concepts}
+\subsection{Describe the benefits and considerations of using cloud services}
+\question Describe terms such as High Availability, Scalability, Elasticity, Agility, Fault Tolerance, and Disaster Recovery
+\begin{solution}[2in]
+	High Availability - Available all the time and everywhere\\
+	Scalability - Adding more or removing resources when needed\\
+	Elasticity - Automatically adding more resources to handle traffic\\
+	Agility - Fast to set up\\
+	Fault Tolerance - Able to continue running despite a fault\\
+	Disaster recovery - Able to recover data after an issue
+\end{solution}
+\question Describe the principles of economies of scale
+\begin{solution}[2in]
+	By purchasing and using in larger quantities, a discount is available, making costs less
+\end{solution}
+\question Describe the differences between Capital Expenditure (CapEx) and Operational Expenditure (OpEx)
+\begin{solution}[2in]
+	Capital expenditure is spending on equipment, such as servers. Operational expenditure is spending that continues throughout the usage of a product, such as power costs
+\end{solution}
+\question Describe the consumption-based model
+\begin{solution}[2in]
+	A user will only pay for what they use
+\end{solution}
+\subsection{Describe the differences between Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS)}
+\question Describe Infrastructure-as-a-Service (IaaS)
+\begin{solution}[2in]
+	Gives control over hardware, user is responsible for everything but the running of the hardware
+\end{solution}
+
+\question Describe Platform-as-a-Service (PaaS)
+\begin{solution}[2in]
+	Don't have to manage the infrastructure, provides an environment for building, testing and deploying software applications
+\end{solution}
+
+\question Describe Software-as-a-Service (SaaS)
+\begin{solution}[2in]
+	Only responsible for the data and access.
+\end{solution}
+
+\question Compare and contrast the three different service types
+\begin{solution}[2in]
+	All service types have no upfront costs.\\
+	\\
+	Software as a Service is cheapest, then platform, then infrastructure as the users have greater control.
+\end{solution}
+\subsection{Describe the differences between Public, Private and Hybrid cloud models}
+\question Describe Public cloud
+\begin{solution}[2in]
+	No local hardware, all running on the cloud providers hardware
+\end{solution}
+
+\question Describe Private cloud
+\begin{solution}[2in]
+	Cloud set up in own datacenter
+\end{solution}
+
+\question Describe Hybrid cloud
+\begin{solution}[2in]
+	Combining public and private clouds
+\end{solution}
+
+\question Compare and contrast the three different cloud models
+\begin{solution}[2in]
+	Hybrid cloud is the most expensive, but also offers the greatest flexibility.\\
+	\\
+	Private and hybrid clouds are best for when compliance is important.\\
+	\\
+	Private and hybrid clouds also are good for when legacy systems need to keep going\\
+	\\
+	Public cloud is best for when scalability and agility is important.
+\end{solution}
+
+\section{Describe Core Azure Services}
+\subsection{Describe the core Azure architectural components}
+\question Describe Regions
+\begin{solution}[2in]
+	A geographical area on the planet containing at least one, but potentially multiple datacenters networked together
+\end{solution}
+
+\question Describe Availability Zones
+\begin{solution}[2in]
+	Physically separate datacenters within an Azure Region
+\end{solution}
+
+\question Describe Resource Groups
+\begin{solution}[2in]
+	A logical container for resources deployed on Azure
+\end{solution}
+
+\question Describe Azure Resource Manager
+\begin{solution}[2in]
+	A service for managing resources within Azure
+\end{solution}
+
+\question Describe the benefits and usage of core Azure architectural components
+\begin{solution}[2in]
+	Regions - Used to ensure the data is kept close to users to increase performance\\
+	Availability Zones - Allow for backup to ensure data is kept online\\
+	Resource groups - Allow for managing resource use\\
+	Azure Resource Manager - Ensure the correct amount of resources are allocated to services
+\end{solution}
+\subsection{Describe some of the core products available in Azure}
+\question Describe products available for compute
+\begin{solution}[2in]
+	Virtual Machines - Windows or Linux simulated machines\\
+	Virtual Machine scale sets - Scaling for Azure Virtual Machines\\
+	Azure Container Instances - Run containerised apps on Azure without provisioning servers or VMs\\
+	Azure Kubernetes Service - Enables management of a cluster of VMs that run containerised services
+\end{solution}
+
+\question Describe products available for Networking
+\begin{solution}[2in]
+	Virtual Network - Connecting VMs to incoming VPN connections\\
+	Load Balancer - Balances inbound and outbound connections to apps or service endpoints\\
+	VPN gateway - Access Azure Virtual Networks through VPN gateways\\
+	Application gateway - Optimizes app delivery while increasing security\\
+	Content Delivery Network - Provides high bandwidth content to customers
+\end{solution}
+
+\question Describe products available for Storage
+\begin{solution}[2in]
+	Blob storage - Storage for very large objects\\
+	Disk storage - Disks for Virtual Machines\\
+	File storage - File shares you can access like a file storage\\
+	Archive storage - Storage that is not accessed frequently
+\end{solution}
+
+\question Describe products available for Databases
+\begin{solution}[2in]
+	CosmosDB - NoSQL database\\
+	Azure SQL Database - Fully managed relational database\\
+	Azure Database for MySQL - Fully managed MySQL database\\
+	Azure Database for PostgreSQL - Fully managed PostgreSQL database\\
+	Azure Database Migration service - Migrate databases to the cloud
+\end{solution}
+
+\question Describe the Azure Marketplace and its usage scenarios
+\begin{solution}[2in]
+	Azure Marketplace allows you to purchase third party services which integrate with Azure
+\end{solution}
+\subsection{Describe some of the solutions available on Azure}
+\question Describe IoT Products on Azure
+\begin{solution}[2in]
+	IoT Hub - Messaging hub for IoT devices\\
+	IoT central - IoT Software as a Service
+\end{solution}
+
+\question Describe Big data and Analytics Products on Azure
+\begin{solution}[2in]
+	Azure Synapse Analytics - Fully managed data warehouse\\
+	HDInsight - Process data with Hadoop in the cloud\\
+	Azure Databricks - Collaborative Apache Spark based analytics
+\end{solution}
+
+\question Describe AI Products on Azure
+\begin{solution}[2in]
+	Azure Machine Learning Service - In depth machine learning\\
+	Azure Machine Learning Studio - Drag and drop machine learning
+\end{solution}
+
+\question Describe Serverless Products on Azure
+\begin{solution}[2in]
+	Azure Functions - Event driven, serverless compute service\\
+	Logic Apps - Execute workflows designed to automate business scenarios from blocks
+	Event Grid - Want to do multiple things based on the information that is coming in
+\end{solution}
+
+\question Describe DevOps Products on Azure
+\begin{solution}[2in]
+	Azure DevOps - Git Repos and Kanban boards\\
+	Azure DevTest Labs - Windows and Linux environments for testing
+\end{solution}
+\subsection{Describe Azure Management tools}
+\question Describe Azure Tools
+\begin{solution}[2in]
+	Azure Portal - Access with any web browser\\
+	Azure Powershell - Module for windows powershell or powershell core\\
+	Azure CLI - Cross platform including with bash\\
+	Cloud Shell - Browser accessible shell
+\end{solution}
+\section{Describe Security, Privacy, Compliance and Trust}
+\subsection{Describe securing network connectivity in Azure}
+\question Describe Network Security Groups
+\begin{solution}[2in]
+	This allows or denies inbound network traffic to your Azure Resources in a similar way to a firewall
+\end{solution}
+\question Describe Application Security Groups
+\begin{solution}[2in]
+	Allows you to group computers by name to manage them easier
+\end{solution}
+\question Describe User Defined Routes
+\begin{solution}[2in]
+	Static routes in Azure to override Azure's default system routes
+\end{solution}
+\question Describe Azure Firewall
+\begin{solution}[2in]
+	A firewall to protect Azure apps
+\end{solution}
+\question Describe Azure DDoS protection
+\begin{solution}[2in]
+	Protection for Azure Apps against DDoS attacks
+\end{solution}
+\subsection{Describe core Azure Identity Services}
+\question Describe the difference between Authentication and Authorisation
+\begin{solution}[2in]
+	Authentication - Establish the identity of a person or service looking to access a resource\\
+	Authorization - Establish what level of access an authenticated person or service has
+\end{solution}
+\question Describe Azure Active Directory
+\begin{solution}[2in]
+	Azure Active directory is a service to manage identity in Azure. Including Authentication.
+\end{solution}
+\question Describe Azure Multi Factor Authentication
+\begin{solution}[2in]
+	Authentication with something you know, something you are and something you have
+\end{solution}
+\subsection{Describe the security tools and features of Azure}
+\question Describe Azure Security Center
+\begin{solution}[2in]
+	This provides security recommendations and monitors services for security vulnerabilities
+\end{solution}
+\question Describe Azure Key Vault
+\begin{solution}[2in]
+	This is a place to store secrets such as keys and passwords
+\end{solution}
+\question Describe Azure Information Protection
+\begin{solution}[2in]
+	This is a solution to classify and optionally protect documents by applying labels
+\end{solution}
+\question Describe Azure Advanced Threat Protection
+\begin{solution}[2in]
+	This is a solution to identify, protect and help to investigate threats
+\end{solution}
+\subsection{Describe Azure Governance Methodologies}
+\question Describe Policies and Initiatives with Azure Policy
+\begin{solution}[2in]
+	Policy - A rule applied to a scope of resources\\
+	Initiative - A group of policies to help track compliance
+\end{solution}
+\question Describe Role Based Access Control
+\begin{solution}[2in]
+	Giving users or services permissions based on roles provided to them
+\end{solution}
+\question Describe Locks
+\begin{solution}[2in]
+	This is a solution to prevent the accidental deletion of a resource
+\end{solution}
+\question Describe Azure Advisor security assistance
+\begin{solution}[2in]
+	Get proactive, actionable and personalised best practice recommendations
+\end{solution}
+\question Describe Azure Blueprints
+\begin{solution}[2in]
+	A declarative way to orchestrate the deployment of various resource templates and other artefacts
+\end{solution}
+\subsection{Describe monitoring and reporting options in Azure}
+\question Describe Azure Monitor
+\begin{solution}[2in]
+	Maximising the availability and performance of applications using telemetry
+\end{solution}
+\question Describe Azure Service Health
+\begin{solution}[2in]
+	Provides guidance when issues with Azure affect you
+\end{solution}
+
+\question Describe the use cases and benefits of Azure Monitor and Azure Service Health
+\begin{solution}[2in]
+	Azure Monitor - Your configuration could be improved\\
+	Azure Service Health - An Azure problem is going to affect your service
+\end{solution}
+
+\subsection{Describe privacy, compliance and data protection standards in Azure}
+
+\question Describe industry compliance terms such as GDPR, ISO and NIST
+\begin{solution}[2in]
+	GDPR - Data stored has to have a reason and can be requested to be deleted\\
+	ISO - Range of compliances, notably 27001 for information security management\\
+	NIST - Government standards
+\end{solution}
+
+\question Describe the Microsoft Privacy Statement
+\begin{solution}[2in]
+	A statement saying what Microsoft is doing with you data in Azure
+\end{solution}
+
+\question Describe the Trust Center
+\begin{solution}[2in]
+	Details as to how Microsoft implements and supports security, privacy, compliance and transparency
+\end{solution}
+
+\question Describe the Service Trust Portal
+\begin{solution}[2in]
+	Hosts the compliance manager service and contains Microsoft audit reports
+\end{solution}
+
+\question Describe the Compliance Manager
+\begin{solution}[2in]
+	Allows you to ensure that you are compliant
+\end{solution}
+
+\question Describe Azure Government Cloud Services
+\begin{solution}[2in]
+	Azure services for the US Government with dedicated datacenters and different levels of compliance
+\end{solution}
+
+\question Describe Azure China cloud services
+\begin{solution}[2in]
+	Azure provided within China in partnership with 21Vianet
+\end{solution}
+
+\section{Describe Azure Pricing, Service Level agreements and Lifecycles}
+\subsection{Describe Azure subscriptions}
+\question Describe an Azure Subscription
+\begin{solution}[2in]
+	A logical container for resources in Azure
+\end{solution}
+
+
+\question Describe the uses and options with Azure subscriptions such access control and offer types
+\begin{solution}[2in]
+	Access Control - Subscriptions can be managed with RBAC so only certain users can access them \\
+	Offer types - Monthly credits given in partnership with a Visual studio subscription
+	
+\end{solution}
+
+\question Describe subscription management using Management groups
+\begin{solution}[2in]
+	Management groups allow you to order your Azure resources hierarchically into collections, which provide a further level of classification that is above the level of subscriptions
+	
+\end{solution}
+
+\subsection{Describing planning and management of costs}
+
+\question Describe options for Purchasing Azure products and services
+\begin{solution}[2in]
+	You can purchase directly on the web, enter an enterprise agreement or an agreement with a CSP (Cloud Solution Provider)
+	
+\end{solution}
+
+\question Describe options around Azure Free account
+\begin{solution}[2in]
+	You can have a 12 month trial, including \$300 in credits, then some services are always free after that
+ 	
+\end{solution}
+
+\question Describe the factors affecting costs
+\begin{solution}[2in]
+	Resource types - Larger VMs will cost more etc\\
+	Services - Your pricing depends on how you purchase Azure\\
+	Locations - Some areas are more expensive than others\\
+	Ingress and egress traffic - The more traffic you have, the greater the costs
+	
+\end{solution}
+
+\question Describe Zones for billing purposes
+\begin{solution}[2in]
+	There are zones that it costs a certain amount to send data between
+	
+\end{solution}
+
+\question Describe the pricing calculator
+\begin{solution}[2in]
+	This allows you to configure and estimate the costs for Azure products and features for your specific resources
+	
+\end{solution}
+
+\question Describe the Total Cost of Ownership Calculator
+\begin{solution}[2in]
+	This allows you to estimate the savings you would get by transferring services from on premises to Azure
+	
+\end{solution}
+
+\question Describe best practices for minimizing Azure costs
+\begin{solution}[2in]
+	Spending limits and quotas - Get notification when spending gets to a certain level\\
+	Tags - Tag resources so you know how much projects cost\\
+	Azure reservations - Reserve a resource for 1 or 3 years for a saving\\
+	Azure Advisor Recommendations - Such as scaling down an underutilized VM
+	
+\end{solution}
+
+\subsection{Describe Azure Service Level agreements}
+
+\question Describe a Service Level Agreement
+\begin{solution}[2in]
+	A performance target to a product or service
+	
+\end{solution}
+
+\question Describe Composite SLAs
+\begin{solution}[2in]
+	The SLA of a range of applications working together
+	
+\end{solution}
+
+\subsection{Describe Service Lifecycle in Azure}
+\question Describe Public and Private Preview features
+\begin{solution}[2in]
+	Public - Available to all users\\
+	Private - Invitation only
+	
+\end{solution}
+
+\question Describe General Availability
+\begin{solution}[2in]
+	When a feature is released as part of Azure's default product set after evaluation and testing
+\end{solution}
+
+\question Describe how to monitor feature updates and product changes
+\begin{solution}[2in]
+	Use the Azure updates page or the What's new link in the help menu
+\end{solution}
+
+
+\end{questions}
+
+
+
+
+\end{document}
